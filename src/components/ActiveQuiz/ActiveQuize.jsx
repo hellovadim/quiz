@@ -3,7 +3,7 @@ import AnswersList from "./AnswersList/AnswersList";
 
 const ActiveQuize = (props) => {
  const {answerNumber, quizLength} = props;
- console.log(quizLength)
+ 
   return (
     <div className={styles.ActiveQuiz}>
       <p className={styles.Question}>

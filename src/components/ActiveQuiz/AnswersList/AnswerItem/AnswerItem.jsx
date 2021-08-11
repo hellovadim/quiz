@@ -2,6 +2,7 @@ import styles from "./AnswerItem.module.css";
 
 const AnswerItem = (props) => {
   const cls = [styles.AnswerItem]
+  
   if(props.state) {
       cls.push(styles[props.state])
   }
