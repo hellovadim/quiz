@@ -1,11 +1,14 @@
 import styles from "./AnswerItem.module.css";
 
 const AnswerItem = (props) => {
-  console.log(props);
+  const cls = [styles.AnswerItem]
+  if(props.state) {
+      cls.push(styles[props.state])
+  }
   return (
     <li
       onClick={() => props.onAnswerClick(props.answer.id)}
-      className={styles.AnswerItem}
+      className={cls.join(' ')}
     >
       {props.answer.text}
     </li>
