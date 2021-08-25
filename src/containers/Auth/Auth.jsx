@@ -83,7 +83,6 @@ export class Auth extends Component {
   renderInputs() {
     return Object.keys(this.state.formControls).map((controlName, index) => {
       const control = this.state.formControls[controlName];
-      console.log(control);
       return (
         <Input
           key={controlName + index}
