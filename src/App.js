@@ -3,7 +3,7 @@ import Layout from "./Hoc/Layout/Layout";
 import Quiz from "./containers/Quiz/Quiz";
 import {Route, Switch} from "react-router-dom";
 import QuizList from "./containers/QuizList/QuizList";
-import {QuizCreator} from "./containers/QuizCreator/QuizCreator";
+import QuizCreator from "./containers/QuizCreator/QuizCreator";
 import Auth from "./containers/Auth/Auth";
 class App extends Component {
   render() {
