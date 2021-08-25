@@ -17,7 +17,7 @@ function isInvalid({valid, touched, shouldValidate}) {
       <label htmlFor={htmlFor}>{props.label}</label>
       <input value={props.value} type={inputType} onChange={props.onChange} />
       {
-          isInvalid(props) ?  <span>{props.errorMessage} || 'Введите верное значение'</span> : null
+          isInvalid(props) ?  <span>{props.errorMessage  || 'Введите верное значение'}</span> : null
       }
      
     </div>
