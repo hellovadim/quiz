@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import styles from "./QuizList.module.css";
 
+
 export class QuizList extends Component {
 
     renderQuizes() {
@@ -15,6 +16,7 @@ export class QuizList extends Component {
             )
         })
     }
+   
     render() {
         return (
             <div className={styles.QuizList}>
