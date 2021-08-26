@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from "../../axios/axios-quiz";
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./QuizList.module.css";
@@ -22,7 +22,7 @@ export class QuizList extends Component {
   async componentDidMount() {
     try {
       const response = await axios.get(
-        "https://react-quiz-33157-default-rtdb.firebaseio.com/quizes.json"
+        "/quizes.json"
       );
       const quizes = [];
       Object.keys(response.data).forEach((key, index) => {
