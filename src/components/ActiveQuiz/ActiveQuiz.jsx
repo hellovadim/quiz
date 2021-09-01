@@ -1,7 +1,7 @@
 import styles from "./ActiveQuize.module.css";
 import AnswersList from "./AnswersList/AnswersList";
 
-const ActiveQuize = (props) => {
+const ActiveQuiz = (props) => {
  const {answerNumber, quizLength} = props;
  
   return (
@@ -25,4 +25,4 @@ const ActiveQuize = (props) => {
     </div>
   );
 };
-export default ActiveQuize;
+export default ActiveQuiz;
