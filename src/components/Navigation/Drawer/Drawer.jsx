@@ -1,21 +1,14 @@
 import { Component } from "react";
 import styles from "./Drawer.module.css";
 import BackDrop from "../../UI/BackDrop/BackDrop";
-import {NavLink} from 'react-router-dom';
-
-const links = [
-  {to: '/', label: 'Список', exact: true},
-  {to: '/auth', label: 'Авторизация', exact: false},
-  {to: '/quiz-creator', label: 'Создать тест', exact: false}
-]
+import { NavLink } from "react-router-dom";
 
 class Drawer extends Component {
-
   clickHandler = () => {
-    this.props.onClose()
-  }
+    this.props.onClose();
+  };
 
-  renderLinks() {
+  renderLinks(links) {
     return links.map((link, index) => {
       return (
         <li key={index}>
@@ -28,8 +21,8 @@ class Drawer extends Component {
             {link.label}
           </NavLink>
         </li>
-      )
-    })
+      );
+    });
   }
 
   render() {
@@ -38,10 +31,20 @@ class Drawer extends Component {
     if (this.props.isOpen) {
       cls.push(styles.close);
     }
+
+    const links = [
+      { to: "/", label: "Список", exact: true }
+    ];
+    if(this.props.isAuthenticated) {
+      links.push( { to: "/quiz-creator", label: "Создать тест", exact: false },)
+      links.push( { to: "/logout", label: "Выйти", exact: false },)
+    }else{
+      links.push({ to: "/auth", label: "Авторизация", exact: false },)
+    }
     return (
       <>
         <nav className={cls.join(" ")}>
-          <ul>{this.renderLinks()}</ul>
+          <ul>{this.renderLinks(links)}</ul>
         </nav>
         {!this.props.isOpen ? <BackDrop onClick={this.props.onClose} /> : null}
       </>
@@ -49,4 +52,4 @@ class Drawer extends Component {
   }
 }
 
-export default Drawer
+export default Drawer;
