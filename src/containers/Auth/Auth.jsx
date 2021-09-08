@@ -47,7 +47,7 @@ export class Auth extends Component {
     };
     try {
       const response = await axios.post(
-        "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyAbmHW9Pdo4JIe8IrWjml5GWFK3x1NG9S8",
+        "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAbmHW9Pdo4JIe8IrWjml5GWFK3x1NG9S8",
         authData,
       );
       console.log(response.data)
